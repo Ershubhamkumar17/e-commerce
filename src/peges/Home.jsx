@@ -112,7 +112,7 @@ function Home() {
 
         <div class="banner-overlay"></div>
 
-        <div class="banner-content">
+        <div class="banner-content1">
 
             <span class="small-title">
                 LIMITLESS COLLECTION
@@ -146,7 +146,7 @@ function Home() {
 
         <div class="banner-content">
 
-            <span class="small-title">FEEL AND GLOW</span>
+            <span class="small-title1">FEEL AND GLOW</span>
 
             <h1>
                 Deeply Nourishing Hair Serum

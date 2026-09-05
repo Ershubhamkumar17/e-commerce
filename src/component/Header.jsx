@@ -8,11 +8,11 @@ function Header() {
         <div className="logo">LASSIS</div>
  
         <nav>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/collection">Collection</Link>
           <Link to="/sale">Sale</Link>
           <Link to="/categories">Categories</Link>
-          <Link to="/products">Products</Link>
+          <Link to="/products">All Products</Link>
         </nav>
 
         <div className="nav-icons">

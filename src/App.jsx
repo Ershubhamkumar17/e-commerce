@@ -4,6 +4,7 @@ import Home from './peges/Home'
 import Header from './component/Header'
 import Categorise from './component/Categorise'
 import Products from './component/Products'
+import Footer from './component/Footer'
 function App() {
 
   return (
@@ -11,10 +12,11 @@ function App() {
        <BrowserRouter>
     <Header/>
        <Routes>
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
          <Route path="/categories" element={<Categorise/>}/>
           <Route path="/products" element={<Products/>}/>
        </Routes>
+       <Footer/>
        </BrowserRouter>
       
     </>
