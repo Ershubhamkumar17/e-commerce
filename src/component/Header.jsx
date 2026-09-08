@@ -11,12 +11,9 @@ function Header() {
           <Link to="/">Home</Link>
           <Link to="/collection">Collection</Link>
           <Link to="/sale">Sale</Link>
-          <Link to="/categories">Categories</Link>
-          <Link to="/products">All Products</Link>
         </nav>
 
         <div className="nav-icons">
-          <span>⌕</span>
           <span>♡</span>
           <span>♙</span>
           <span>🛒</span>
