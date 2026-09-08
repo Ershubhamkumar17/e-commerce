@@ -1,124 +1,76 @@
 import React, { useContext } from "react";
 import storedata from "../utils/ContextApi";
+import { categories } from "../utils/product";
 function Collection() {
     const { collectiondata } = useContext(storedata);
 
     return (
 
         <>
-        <div cassName="collection-page-container">
-            <div className="collection-page">
+            <div className="collection-page-container">
+                <div className="left-section">
+                    <div className="filter-sidebar">
 
-                <h1 className="collection-title">
-                    Our Collection
-                </h1>
-
-                <p className="collection-subtitle">
-                    Discover our latest beauty collection
-                </p>
-
-                <div className="collection-product-grid">
-
-                    {collectiondata.map((item) => (
-
-                        <div
-                            className="collection-product-card"
-                            key={item.id}
-                        >
-
-                            <img
-                                className="collection-product-image"
-                                src={item.image_link}
-                                alt={item.name}
-                            />
-
-                            <div className="collection-product-info">
-
-                                <h3 className="collection-product-name">
-                                    {item.name}
-                                </h3>
-
-                                <p className="collection-product-price">
-                                    $
-                                    {item.price}
-                                </p>
-
-                                <button className="collection-add-btn">
-                                    Add To Cart
-                                </button>
-
-                            </div>
-
+                        <div className="filter-header">
+                            <h2>Filters</h2>
+                            <button className="filter-clear">
+                                Clear All
+                            </button>
                         </div>
 
-                    ))}
+                        {/* Category */}
+                        <div className="filter-box">
+                            <h3>Category</h3>
 
-                </div>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Makeup</span>
+                            </label>
 
-            </div>
-            <div className="filter-sidebar">
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Skincare</span>
+                            </label>
 
-                <div className="filter-header">
-                    <h2>Filters</h2>
-                    <button className="filter-clear">
-                        Clear All
-                    </button>
-                </div>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Haircare</span>
+                            </label>
 
-                {/* Category */}
-                <div className="filter-box">
-                    <h3>Category</h3>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Fragrance</span>
+                            </label>
+                        </div>
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Makeup</span>
-                    </label>
+                        {/* Brand */}
+                        <div className="filter-box">
+                            <h3>Brand</h3>
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Skincare</span>
-                    </label>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Lakme</span>
+                            </label>
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Haircare</span>
-                    </label>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>Maybelline</span>
+                            </label>
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Fragrance</span>
-                    </label>
-                </div>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>L'Oreal</span>
+                            </label>
 
-
-                {/* Brand */}
-                <div className="filter-box">
-                    <h3>Brand</h3>
-
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Lakme</span>
-                    </label>
-
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>Maybelline</span>
-                    </label>
-
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>L'Oreal</span>
-                    </label>
-
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>MAC</span>
-                    </label>
-                </div>
+                            <label className="filter-item">
+                                <input type="checkbox" />
+                                <span>MAC</span>
+                            </label>
+                        </div>
 
 
-                {/* Price */}
-                <div className="filter-box">
+                        {/* Price */}
+                        {/* <div className="filter-box">
                     <h3>Price Range</h3>
 
                     <div className="price-inputs">
@@ -134,32 +86,54 @@ function Collection() {
                             placeholder="Max"
                         />
                     </div>
+                </div> */}
+                    </div>
                 </div>
+                <div className="right-section">
+                    <div className="collection-page">
 
+                        <div className="collection-product-grid">
 
-                {/* Rating */}
-                <div className="filter-box">
-                    <h3>Rating</h3>
+                            {collectiondata.map((item) => (
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>★★★★★ 5.0</span>
-                    </label>
+                                <div
+                                    className="collection-product-card"
+                                    key={item.id}
+                                >
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>★★★★☆ 4.0 & above</span>
-                    </label>
+                                    <img
+                                        className="collection-product-image"
+                                        src={item.image_link}
+                                        alt={item.name}
+                                    />
 
-                    <label className="filter-item">
-                        <input type="checkbox" />
-                        <span>★★★☆☆ 3.0 & above</span>
-                    </label>
+                                    <div className="collection-product-info">
+
+                                        <h3 className="collection-product-name">
+                                            {item.name}
+                                        </h3>
+
+                                        <p className="collection-product-price">
+                                            $
+                                            {item.price}
+                                        </p>
+
+                                        <button className="collection-add-btn">
+                                            Add To Cart
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
-
-</div>
         </>
     );
 }

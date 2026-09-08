@@ -1,8 +1,7 @@
 import Reac from "react";
 import Categorise from "../component/Categorise";
 import Products from "../component/Products";
-// import ImgCard from "../component/ImgCard";
-// import BeautyEssentials from "../component/BeautyEssentials";
+
 function Home() {
 
 

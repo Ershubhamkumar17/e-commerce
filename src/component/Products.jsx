@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react";
 import storedata from "../utils/ContextApi";
 
 function Products() {
-    const { categoriesdata } = useContext(storedata);
+    const { productsdata } = useContext(storedata);
 
     const sliderRef = useRef(null);
 
@@ -28,7 +28,7 @@ function Products() {
 
             <div className="products-grid" ref={sliderRef}>
 
-                {categoriesdata?.map((product, index) => (
+                {productsdata?.map((product, index) => (
 
                     <div className="product-card" key={index}>
 
@@ -68,7 +68,7 @@ function Products() {
                             </p>
 
                             <div className="price">
-                            ₹{product.price}
+                            ${product.price}
                             </div>
 
                         </div>
