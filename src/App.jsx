@@ -4,8 +4,9 @@ import Home from './peges/Home'
 import Header from './component/Header'
 import Products from './component/Products'
 import Footer from './component/Footer'
-import Collection from './component/Collection'
-import Sales from './component/Sales'
+import Collection from './peges/Collection'
+import Sales from './peges/Sales'
+import ProductsInformation from'./component/ProductsInformation'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/collection" element={<Collection />} />
           <Route path="/sale" element={<Sales />} />
+          <Route path="/productinformation" element={<ProductsInformation />} />
         </Routes>
         <Footer />
       </BrowserRouter>

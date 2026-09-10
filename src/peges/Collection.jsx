@@ -1,8 +1,41 @@
-import React, { useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import storedata from "../utils/ContextApi";
-import { categories } from "../utils/product";
+import { Link } from "react-router-dom";
 function Collection() {
+    const [filteredcategoryProducts, setFilteredcategoryProducts] = useState([]);
     const { collectiondata } = useContext(storedata);
+
+    useEffect(() => {
+        setFilteredcategoryProducts(collectiondata);
+    }, [collectiondata]);
+
+    const handaleCategarymakeupfiltter = (e) => {
+        const selectedmakeupCategory = e.target.value;
+        const filteredmakeupProducts = collectiondata.filter((product) => product.mycategory === selectedmakeupCategory);
+        setFilteredcategoryProducts(filteredmakeupProducts);
+    };
+
+        const handaleskineCategaryfiltter = (e) => {
+            setFilteredcategoryProducts("");
+        const selectedskineCategory = e.target.value;
+        const filteredskineProducts = collectiondata.filter((product) => product.mycategory === selectedskineCategory);
+        setFilteredcategoryProducts(filteredskineProducts);
+    };
+
+          const handaleHaircareCategaryfiltter = (e) => {
+              setFilteredcategoryProducts("");
+        const selectedHaircareCategory = e.target.value;
+        const filteredHaircareProducts = collectiondata.filter((product) => product.mycategory === selectedHaircareCategory);
+        setFilteredcategoryProducts(filteredHaircareProducts);
+    };
+          const handaleFragranceCategaryfiltter = (e) => {
+              setFilteredcategoryProducts("");
+        const selectedFragranceCategory = e.target.value;
+        const filteredFragranceProducts = collectiondata.filter((product) => product.mycategory === selectedFragranceCategory);
+        setFilteredcategoryProducts(filteredFragranceProducts);
+    };
+
+
 
     return (
 
@@ -17,28 +50,46 @@ function Collection() {
                                 Clear All
                             </button>
                         </div>
-
                         {/* Category */}
                         <div className="filter-box">
                             <h3>Category</h3>
-
                             <label className="filter-item">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="category"
+                                    value="Makeup"
+                                    onChange={handaleCategarymakeupfiltter}
+                                />
                                 <span>Makeup</span>
                             </label>
 
                             <label className="filter-item">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="category"
+                                    value="Skincare"
+                                    onChange={handaleskineCategaryfiltter}
+                                />
                                 <span>Skincare</span>
                             </label>
 
                             <label className="filter-item">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="category"
+                                    value="Haircare"
+                                    onChange={handaleHaircareCategaryfiltter}
+                                />
                                 <span>Haircare</span>
                             </label>
 
                             <label className="filter-item">
-                                <input type="checkbox" />
+                                <input
+                                    type="radio"
+                                    name="category"
+                                    value="Fragrance"
+                                    onChange={handaleFragranceCategaryfiltter}
+                                />
                                 <span>Fragrance</span>
                             </label>
                         </div>
@@ -94,11 +145,13 @@ function Collection() {
 
                         <div className="collection-product-grid">
 
-                            {collectiondata.map((item) => (
+                            {filteredcategoryProducts?.map((item,index) =>
+                             <Link to={`/productinformation/?id=${item.id}`}>
+                            (
 
                                 <div
                                     className="collection-product-card"
-                                    key={item.id}
+                                    key={index}
                                 >
 
                                     <img
@@ -125,14 +178,17 @@ function Collection() {
                                     </div>
 
                                 </div>
+                                
 
-                            ))}
+                            )
+                            </Link>
+                            )
 
+                            }
                         </div>
 
                     </div>
                 </div>
-
             </div>
         </>
     );

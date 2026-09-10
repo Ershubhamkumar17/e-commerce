@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import storedata from '../utils/ContextApi'
-import { products, categories,addcollectiondata } from '../utils/product'
+import { products, categories, addcollectiondata,addbranddata } from '../utils/product'
 
 
 
@@ -17,14 +17,23 @@ function ContextApi({ children }) {
 
       const data = await response.json();
 
-      const newData = data.map((item) => {
-        return {
+      const newData = [];
+
+      data.forEach((item) => {
+        const randomCategory =
+          addcollectiondata[Math.floor(Math.random() * addcollectiondata.length)];
+          console.log("randomCategory", randomCategory);
+        const randombrandCategory =
+          addbranddata[Math.floor(Math.random() * addbranddata.length)];
+
+        newData.push({
           ...item,
-          myCategory: addcollectiondata[Math.floor(Math.random() * addcollectiondata.length)]
-        };
+          mycategory: randomCategory,
+          mybrand: randombrandCategory
+        });
       });
 
-      console.log("newdata",newData);
+      console.log(newData);
 
       setCollectiondata(newData);
 

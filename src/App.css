@@ -1503,6 +1503,374 @@ button {
   background: #203d31;
 }
 
+/* product information */
+
+/* MAIN CONTAINER */
+
+.product-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LEFT IMAGE SECTION
+========================= */
+
+.image-section {
+  padding-top: 20px;
+}
+
+.product-image-box {
+  width: 100%;
+  min-height: 500px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  border-radius: 10px;
+}
+
+
+/* MAIN IMAGE */
+
+.main-image {
+  width: 100%;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* BUTTONS */
+
+.image-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 25px;
+}
+
+.image-buttons button {
+  border: none;
+
+  color: white;
+
+  font-size: 16px;
+
+  padding: 12px 45px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+
+/* ADD CART */
+
+.add-cart-btn {
+  background-color: #facc15;
+}
+
+.add-cart-btn:hover {
+  background-color: #eab308;
+}
+
+
+/* BUY */
+
+.buy-btn {
+  background-color: #22c55e;
+}
+
+.buy-btn:hover {
+  background-color: #16a34a;
+}
+
+
+/* =========================
+   RIGHT PRODUCT DETAILS
+========================= */
+
+.product-details {
+  padding-top: 20px;
+}
+
+.product-details h1 {
+  font-size: 28px;
+
+  font-weight: 600;
+
+  margin: 0 0 15px;
+}
+
+
+/* RATING */
+
+.rating-section {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 15px;
+}
+
+.stars {
+  font-size: 18px;
+}
+
+.reviews {
+  font-size: 14px;
+
+  color: #777;
+}
+
+.stock {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #16a34a;
+}
+
+
+/* PRICE */
+
+.price {
+  font-size: 28px;
+
+  font-weight: bold;
+
+  margin: 15px 0;
+}
+
+
+/* DESCRIPTION */
+
+.description {
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   COLOR
+========================= */
+
+.color-section {
+  margin-bottom: 25px;
+}
+
+.heading {
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-section {
+  display: flex;
+
+  align-items: center;
+
+  margin: 25px 0;
+}
+
+.quantity-section button {
+  width: 35px;
+
+  height: 35px;
+
+  border: none;
+
+  background-color: #ddd;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+.quantity-section p {
+  width: 45px;
+
+  text-align: center;
+
+  margin: 0;
+}
+
+
+/* =========================
+   BUY NOW
+========================= */
+
+.buy-now-section {
+  margin-bottom: 25px;
+}
+
+.buy-now-section button {
+  padding: 12px 35px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background-color: #dc2626;
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.buy-now-section button:hover {
+  background-color: #b91c1c;
+}
+
+
+/* =========================
+   DELIVERY BOX
+========================= */
+
+.delivery-box {
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.delivery-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+.delivery-icon {
+  font-size: 25px;
+}
+
+.delivery-title {
+  font-weight: 600;
+
+  margin: 0 0 5px;
+}
+
+.delivery-item p {
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+.delivery-item a {
+  color: #2563eb;
+
+  font-size: 14px;
+
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .product-container {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 20px 15px;
+  }
+
+  .product-image-box {
+    min-height: auto;
+
+    padding: 20px;
+  }
+
+  .main-image {
+    height: 300px;
+  }
+
+  .product-details h1 {
+    font-size: 24px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .main-image {
+    height: 250px;
+  }
+
+  .image-buttons {
+    gap: 10px;
+  }
+
+  .image-buttons button {
+    padding: 10px 20px;
+
+    font-size: 14px;
+  }
+
+  .product-details h1 {
+    font-size: 21px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+}
 
 /* =========================
    RESPONSIVE

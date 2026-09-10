@@ -113,4 +113,6 @@ export const products = [
 //   },
 // ];
 
-export const addcollectiondata = ["Makeup", "Skincare", "Hair Care", "Fragrances",]
+export const addcollectiondata = ["Makeup", "Skincare", "Haircare", "Fragrance",]
+
+export const addbranddata = ["Lakme", "Maybelline", "L'Oreal","MAC"]
