@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import storedata from "../utils/ContextApi";
 import { useSearchParams } from "react-router-dom";
 
 function ProductsInformation() {
-    const { collectiondata } = useContext(storedata);
+
+    const { collectiondata,cartItems,setCartItems } = useContext(storedata);
     const [searchparams] = useSearchParams()
     const id = searchparams.get("id")
     const productInformetion = collectiondata.find((item) => item.id == id)
-    console.log("productInformetion", productInformetion)
+
+    const handaleAddtoCart = () => {
+        setCartItems([...cartItems,productInformetion]);
+    }
 
     return (
         <>
@@ -26,7 +30,7 @@ function ProductsInformation() {
 
                         <div className="image-buttons">
                             <button
-                                className="add-cart-btn"
+                                className="add-cart-btn" onClick={handaleAddtoCart}
 
                             >
                                 Add to Cart
@@ -71,7 +75,7 @@ function ProductsInformation() {
 
                     {/* Description */}
                     <p className="description">
-                  {      productInformetion?.description}
+                        {productInformetion?.description}
                     </p>
 
                     {/* Quantity */}

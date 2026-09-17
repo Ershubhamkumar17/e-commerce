@@ -13,8 +13,9 @@ function Header() {
         </nav>
         <div className="nav-icons">
           <span>♡</span>
-          <span>♙</span>
-          <span>🛒</span>
+          <Link to="login"><span>♙</span></Link>
+    
+         <Link to="/addtocart"> <span>🛒</span></Link>
         </div>
       </header>
     </>

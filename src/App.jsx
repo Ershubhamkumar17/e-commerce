@@ -7,6 +7,9 @@ import Footer from './component/Footer'
 import Collection from './peges/Collection'
 import Sales from './peges/Sales'
 import ProductsInformation from'./component/ProductsInformation'
+import AddtoCart from './component/AddtoCart'
+import Rajistration from './peges/Rajistration'
+import Login from './peges/Login'
 function App() {
 
   return (
@@ -19,6 +22,9 @@ function App() {
           <Route path="/collection" element={<Collection />} />
           <Route path="/sale" element={<Sales />} />
           <Route path="/productinformation" element={<ProductsInformation />} />
+          <Route path="/addtocart" element={<AddtoCart />} />
+          <Route path="/rajistration" element={<Rajistration />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>

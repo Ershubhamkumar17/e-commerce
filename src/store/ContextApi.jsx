@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import storedata from '../utils/ContextApi'
-import { products, categories, addcollectiondata,addbranddata } from '../utils/product'
-
-
+import { products, categories, addcollectiondata, addbranddata, quantity } from '../utils/product'
 
 function ContextApi({ children }) {
-
+  const [ragistration, setRagistration] = useState([])
+console.log("ragistration form dubmited",ragistration)
+  const [cartItems, setCartItems] = useState([]);
   const [categoriesdata] = useState(categories);
   const [productsdata] = useState(products);
   const [collectiondata, setCollectiondata] = useState([]);
@@ -22,14 +22,14 @@ function ContextApi({ children }) {
       data.forEach((item) => {
         const randomCategory =
           addcollectiondata[Math.floor(Math.random() * addcollectiondata.length)];
-          console.log("randomCategory", randomCategory);
         const randombrandCategory =
           addbranddata[Math.floor(Math.random() * addbranddata.length)];
 
         newData.push({
           ...item,
           mycategory: randomCategory,
-          mybrand: randombrandCategory
+          mybrand: randombrandCategory,
+          quantity
         });
       });
 
@@ -61,7 +61,7 @@ function ContextApi({ children }) {
   console.log("api data", collectiondata);
   return (
     <>
-      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata }}>
+      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata, cartItems, setCartItems,ragistration,setRagistration }}>
         {children}
       </storedata.Provider>
     </>
