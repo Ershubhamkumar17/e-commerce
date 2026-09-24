@@ -13,7 +13,7 @@ function Header() {
         </nav>
         <div className="nav-icons">
           <span>♡</span>
-          <Link to="login"><span>♙</span></Link>
+          <Link to="/login"><span>♙</span></Link>
     
          <Link to="/addtocart"> <span>🛒</span></Link>
         </div>

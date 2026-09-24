@@ -1,8 +1,23 @@
 
-import React from "react";
+import { React, useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import storedata from '../utils/ContextApi'
 function Login() {
+  const { ragistration } = useContext(storedata)
+  const [email, setEmail] = useState("")
+
+  const loginbtn = () => {
+    console.log("ragistretion form", ragistration)
+    console.log("email",email)
+    const findemail = ragistration.find((item) =>{   console.log("item",item);
+    return item==email;})
+    console.log("find email", findemail)
+    if (findemail !== undefined) {
+      alert("login sucessfull")
+    }
+  }
+
+
   return (
     <div className="user-login-screen">
       <div className="user-login-box">
@@ -12,13 +27,15 @@ function Login() {
           <p>Login to your account</p>
         </div>
 
-        <form className="user-login-form">
+        <div className="user-login-form">
 
           <div className="user-login-input-group">
             <label>Email Address</label>
             <input
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -36,29 +53,29 @@ function Login() {
               <span>Remember me</span>
             </label>
 
-            <a href="#" className="user-login-forgot">
+            <Link to="#" className="user-login-forgot">
               Forgot Password?
-            </a>
+            </Link>
           </div>
 
           <button
             type="submit"
             className="user-login-button"
+            onClick={loginbtn}
           >
             Login
           </button>
 
-          <div className="user-login-register">
+          <div className="user-login-register" >
             <span>Don't have an account?</span>
             <Link to="/rajistration">Create Account</Link>
-   
+
           </div>
 
-        </form>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Login;
-

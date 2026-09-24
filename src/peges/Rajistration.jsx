@@ -10,19 +10,20 @@ function Rajistration() {
   const [email, setEmail] = useState("")
   const [number, setNumber] = useState()
   const [pasword, setPasseord] = useState("")
+  const navigate = useNavigate()
 
   const ragistrabtn = () => {
-
+    if (!name || !lastname || !email || !number || !pasword) {
+      alert("All filde is requarde")
+      return
+    }
     setRagistration([name, lastname, email, number, pasword])
     alert("ragistration successfully")
+
+    if (ragistration !== null) {
+      navigate("/login")
+    }
   }
-  //  if (ragistration !== null) {
-  //     const navigate = useNavigate("/login")
-  //     navigate("/login")
-  //   }
-
-
-
 
 
   return (
@@ -70,7 +71,7 @@ function Rajistration() {
             <div className="user-register-field">
               <label>Phone Number</label>
               <input
-                type="tel"
+                type="number"
                 placeholder="Enter phone number" maxLength={10}
                 onChange={(e) => setNumber(e.target.value)}
               />

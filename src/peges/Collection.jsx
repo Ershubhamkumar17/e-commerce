@@ -5,6 +5,7 @@ function Collection() {
     const [filteredcategoryProducts, setFilteredcategoryProducts] = useState([]);
     const { collectiondata } = useContext(storedata);
 
+
     useEffect(() => {
         setFilteredcategoryProducts(collectiondata);
     }, [collectiondata]);

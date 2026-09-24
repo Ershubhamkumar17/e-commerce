@@ -4,8 +4,9 @@ import { products, categories, addcollectiondata, addbranddata, quantity } from 
 
 function ContextApi({ children }) {
   const [ragistration, setRagistration] = useState([])
-console.log("ragistration form dubmited",ragistration)
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  });
   const [categoriesdata] = useState(categories);
   const [productsdata] = useState(products);
   const [collectiondata, setCollectiondata] = useState([]);
@@ -33,7 +34,7 @@ console.log("ragistration form dubmited",ragistration)
         });
       });
 
-      console.log(newData);
+      console.log("api data all", newData);
 
       setCollectiondata(newData);
 
@@ -61,7 +62,7 @@ console.log("ragistration form dubmited",ragistration)
   console.log("api data", collectiondata);
   return (
     <>
-      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata, cartItems, setCartItems,ragistration,setRagistration }}>
+      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata, cartItems, setCartItems, ragistration, setRagistration }}>
         {children}
       </storedata.Provider>
     </>
