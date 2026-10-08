@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import storedata from '../utils/ContextApi'
 
-function Rajistration() {
-  const { setRagistration, ragistration } = useContext(storedata)
+function Registration() {
+  const { setRegistration, registration} = useContext(storedata)
   const [name, setName] = useState("")
   const [lastname, setLastname] = useState("")
   const [email, setEmail] = useState("")
@@ -12,15 +12,35 @@ function Rajistration() {
   const [pasword, setPasseord] = useState("")
   const navigate = useNavigate()
 
-  const ragistrabtn = () => {
-    if (!name || !lastname || !email || !number || !pasword) {
-      alert("All filde is requarde")
-      return
-    }
-    setRagistration([name, lastname, email, number, pasword])
-    alert("ragistration successfully")
+ const registrabtn = () => {
+  if (!name || !lastname || !email || !number || !pasword) {
+    alert("All fields are required");
+    return;
+  }
 
-    if (ragistration !== null) {
+  const user = {
+    name: name,
+    lastname: lastname,
+    email: email,
+    number: number,
+    password: pasword
+  };
+
+  setRegistration(user);
+
+  console.log("user", user);
+
+  sessionStorage.setItem("user", JSON.stringify(user));
+
+  alert("Registration successful");
+
+
+    // localStorage.setItem("user", JSON.stringify(user));
+
+    // setRagistration([name, lastname, email, number, pasword])
+    // alert("Registrationsuccessfully")
+
+    if (registration!== null) {
       navigate("/login")
     }
   }
@@ -96,7 +116,7 @@ function Rajistration() {
             <button
               type="submit"
               className="user-register-submit"
-              onClick={ragistrabtn}
+              onClick={registrabtn}
             >
               Create Account
             </button>
@@ -114,4 +134,4 @@ function Rajistration() {
   )
 }
 
-export default Rajistration
+export default Registration

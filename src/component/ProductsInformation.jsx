@@ -11,6 +11,9 @@ function ProductsInformation() {
 
     const handaleAddtoCart = () => {
         setCartItems([...cartItems,productInformetion]);
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+
+
     }
 
     return (

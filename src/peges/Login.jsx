@@ -3,14 +3,13 @@ import { React, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import storedata from '../utils/ContextApi'
 function Login() {
-  const { ragistration } = useContext(storedata)
+  const { registration } = useContext(storedata)
   const [email, setEmail] = useState("")
 
   const loginbtn = () => {
-    console.log("ragistretion form", ragistration)
-    console.log("email",email)
-    const findemail = ragistration.find((item) =>{   console.log("item",item);
-    return item==email;})
+    console.log("registretion form", registration)
+    const findemail = registration.find(item =>{
+    return item==email})
     console.log("find email", findemail)
     if (findemail !== undefined) {
       alert("login sucessfull")
@@ -68,7 +67,7 @@ function Login() {
 
           <div className="user-login-register" >
             <span>Don't have an account?</span>
-            <Link to="/rajistration">Create Account</Link>
+            <Link to="/registration">Create Account</Link>
 
           </div>
 

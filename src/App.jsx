@@ -8,7 +8,7 @@ import Collection from './peges/Collection'
 import Sales from './peges/Sales'
 import ProductsInformation from'./component/ProductsInformation'
 import AddtoCart from './component/AddtoCart'
-import Rajistration from './peges/Rajistration'
+import Rajistration from './peges/Registration'
 import Login from './peges/Login'
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
           <Route path="/sale" element={<Sales />} />
           <Route path="/productinformation" element={<ProductsInformation />} />
           <Route path="/addtocart" element={<AddtoCart />} />
-          <Route path="/rajistration" element={<Rajistration />} />
+          <Route path="/registration" element={<Rajistration />} />
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />

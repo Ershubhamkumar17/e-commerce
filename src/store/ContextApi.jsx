@@ -3,7 +3,7 @@ import storedata from '../utils/ContextApi'
 import { products, categories, addcollectiondata, addbranddata, quantity } from '../utils/product'
 
 function ContextApi({ children }) {
-  const [ragistration, setRagistration] = useState([])
+  const [registration, setRegistration] = useState([])
   const [cartItems, setCartItems] = useState(() => {
     return JSON.parse(localStorage.getItem("cart")) || [];
   });
@@ -62,7 +62,7 @@ function ContextApi({ children }) {
   console.log("api data", collectiondata);
   return (
     <>
-      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata, cartItems, setCartItems, ragistration, setRagistration }}>
+      <storedata.Provider value={{ categoriesdata, productsdata, collectiondata, salesdata, cartItems, setCartItems, registration, setRegistration }}>
         {children}
       </storedata.Provider>
     </>

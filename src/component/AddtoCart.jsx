@@ -15,7 +15,6 @@ function AddtoCart() {
             return item;
         });
         setCartItems(updatedCart);
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
 
     }
     const hadelquantitydicriment = (id) => {
@@ -27,7 +26,6 @@ function AddtoCart() {
             return item;
         });
         setCartItems(updatedCart);
-        console.log("localstorage")
 
     }
 
